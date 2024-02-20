@@ -6,9 +6,9 @@ QBConfig.UpdateInterval = 5                             -- how often to update p
 QBConfig.StatusInterval = 5000                          -- how often to check hunger/thirst status in milliseconds
 
 QBConfig.Money = {}
-QBConfig.Money.MoneyTypes = { cash = 500, bank = 5000, crypto = 0 } -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
+QBConfig.Money.MoneyTypes = { cash = 5000, bank = 15000, crypto = 0 } -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
 QBConfig.Money.DontAllowMinus = { 'cash', 'crypto' }                -- Money that is not allowed going in minus
-QBConfig.Money.PayCheckTimeOut = 10                                 -- The time in minutes that it will give the paycheck
+QBConfig.Money.PayCheckTimeOut = 30                                 -- The time in minutes that it will give the paycheck
 QBConfig.Money.PayCheckSociety = false                              -- If true paycheck will come from the society account that the player is employed at, requires qb-management
 
 QBConfig.Player = {}
@@ -36,7 +36,7 @@ QBConfig.Notify = {}
 
 QBConfig.Notify.NotificationStyling = {
     group = false,      -- Allow notifications to stack with a badge instead of repeating
-    position = 'right', -- top-left | top-right | bottom-left | bottom-right | top | bottom | left | right | center
+    position = 'bottom', -- top-left | top-right | bottom-left | bottom-right | top | bottom | left | right | center
     progress = true     -- Display Progress Bar
 }
 
@@ -46,26 +46,50 @@ QBConfig.Notify.NotificationStyling = {
 QBConfig.Notify.VariantDefinitions = {
     success = {
         classes = 'success',
-        icon = 'check_circle'
+        icon = 'fab fa-facebook-messenger'
     },
     primary = {
         classes = 'primary',
-        icon = 'notifications'
-    },
-    warning = {
-        classes = 'warning',
-        icon = 'warning'
+        icon = 'fas fa-circle-notch fa-spin'
     },
     error = {
         classes = 'error',
-        icon = 'error'
+        icon = 'fas fa-exclamation-circle fa-spin'
     },
     police = {
         classes = 'police',
-        icon = 'local_police'
+        icon = 'fas fa-bell'
     },
     ambulance = {
         classes = 'ambulance',
         icon = 'fas fa-ambulance'
     }
 }
+
+-- -- This is the Original QB-CORE Notification - Commented to use EF-Notification
+-- QBConfig.Notify.VariantDefinitions = {
+--     success = {
+--         classes = 'success',
+--         icon = 'check_circle'
+--     },
+--     primary = {
+--         classes = 'primary',
+--         icon = 'notifications'
+--     },
+--     warning = {
+--         classes = 'warning',
+--         icon = 'warning'
+--     },
+--     error = {
+--         classes = 'error',
+--         icon = 'error'
+--     },
+--     police = {
+--         classes = 'police',
+--         icon = 'local_police'
+--     },
+--     ambulance = {
+--         classes = 'ambulance',
+--         icon = 'fas fa-ambulance'
+--     }
+-- }
